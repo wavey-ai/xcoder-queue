@@ -30,7 +30,6 @@ impl<E> DecoderInputQueueProducer<E> {
                 Ok(_) => break,
                 Err(rtrb::PushError::Full(returned_frame)) => {
                     frame = returned_frame;
-                    thread::sleep(Duration::from_millis(1));
                 }
             }
         }
@@ -44,9 +43,7 @@ impl<E> Iterator for DecoderInputQueue<E> {
         loop {
             match self.receiver.pop() {
                 Ok(frame) => return Some(frame),
-                Err(rtrb::PopError::Empty) => {
-                    thread::sleep(Duration::from_millis(1));
-                }
+                Err(rtrb::PopError::Empty) => {}
             }
         }
     }
