@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 rtrb = "0.3.1"
 xcoder-quadra = { git = "https://github.com/wavey-ai/av-rs.git" }
+h264 = { git = "https://github.com/wavey-ai/av-rs.git" }
