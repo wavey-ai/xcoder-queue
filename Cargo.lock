@@ -14,7 +14,7 @@ dependencies = [
 [[package]]
 name = "av-traits"
 version = "0.1.0"
-source = "git+https://github.com/wavey-ai/av-rs.git#110c3f6b39cbf801c072ca33bbf972623494b620"
+source = "git+https://github.com/wavey-ai/av-rs.git#5ac4c2ce4949a0194621ff46d72066909e2b9b5d"
 
 [[package]]
 name = "bindgen"
@@ -41,6 +41,12 @@ name = "bitflags"
 version = "2.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
+
+[[package]]
+name = "bytes"
+version = "1.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "428d9aa8fbc0670b7b8d6030a7fadd0f86151cae55e4dbbece15f3780a3dfaf3"
 
 [[package]]
 name = "cc"
@@ -99,6 +105,15 @@ name = "glob"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
+
+[[package]]
+name = "h264"
+version = "0.1.0"
+source = "git+https://github.com/wavey-ai/av-rs.git#5ac4c2ce4949a0194621ff46d72066909e2b9b5d"
+dependencies = [
+ "bytes",
+ "memchr",
+]
 
 [[package]]
 name = "heck"
@@ -356,7 +371,7 @@ checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
 [[package]]
 name = "xcoder-quadra"
 version = "0.1.0"
-source = "git+https://github.com/wavey-ai/av-rs.git#110c3f6b39cbf801c072ca33bbf972623494b620"
+source = "git+https://github.com/wavey-ai/av-rs.git#5ac4c2ce4949a0194621ff46d72066909e2b9b5d"
 dependencies = [
  "av-traits",
  "enum-repr",
@@ -369,7 +384,7 @@ dependencies = [
 [[package]]
 name = "xcoder-quadra-sys"
 version = "0.1.0"
-source = "git+https://github.com/wavey-ai/av-rs.git#110c3f6b39cbf801c072ca33bbf972623494b620"
+source = "git+https://github.com/wavey-ai/av-rs.git#5ac4c2ce4949a0194621ff46d72066909e2b9b5d"
 dependencies = [
  "bindgen",
  "cc",
@@ -380,6 +395,7 @@ dependencies = [
 name = "xcoder-queue"
 version = "0.1.0"
 dependencies = [
+ "h264",
  "rtrb",
  "xcoder-quadra",
 ]
